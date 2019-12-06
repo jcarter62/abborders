@@ -20,7 +20,7 @@ class Settings:
     def config_filename(self) -> str:
         appname = 'abborders'
         osname = os.name
-        if osname == 'win':
+        if osname == 'nt':
             _data_folder = os.path.join(os.getenv('APPDATA'), appname)
         else:
             _data_folder = os.path.join(os.getenv('HOME'), '.' + appname )
