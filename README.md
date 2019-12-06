@@ -4,6 +4,7 @@ This app is used to provide list of water orders by lateral.  This is used by an
 
 ### Install and Setup
 #### Windows:
+* This app requires "ODBC Driver 17 for SQL Server"
 * cd to apps directory
 * git clone https://github.com/jcarter62/abborders
 * cd abborders
@@ -12,5 +13,6 @@ This app is used to provide list of water orders by lateral.  This is used by an
 * Activate virtual environment: .\venv\Scripts\activate.bat
 * Install libraries & requirements: pip install -r requirements.txt
 * Start app: .\ 
+* Add rule to firewall to allow port 5200, or the port specified in start_app.cmd
 
 
