@@ -75,3 +75,10 @@ class Settings:
             "database": i_db,
         }
         self.save_config(obj=obj)
+
+    def settings(self) -> object:
+        result = {
+            "sqlserver": self.server,
+            "database": self.db
+        }
+        return result
