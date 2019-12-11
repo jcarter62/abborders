@@ -1,5 +1,6 @@
-from settings import Settings
 import pyodbc
+
+from settings import Settings
 
 
 class DB:
@@ -8,7 +9,7 @@ class DB:
         self.settings = Settings()
         super().__init__()
 
-    def _conn_str_(self,):
+    def _conn_str_(self, ):
         server = self.settings.server
         database = self.settings.db
         driver = 'DRIVER={ODBC Driver 17 for SQL Server}'
@@ -66,4 +67,3 @@ class DB:
             i += 1
             r[name] = val
         return r
-

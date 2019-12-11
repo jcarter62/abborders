@@ -1,5 +1,6 @@
-import arrow
 import os
+
+import arrow
 
 
 class LogDir:

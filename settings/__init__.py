@@ -1,12 +1,12 @@
-import os
 import json
+import os
 
 
 class Settings:
 
     def __str__(self) -> str:
         nl = '\n'
-        s = 'server:' + self.server + nl +\
+        s = 'server:' + self.server + nl + \
             'db:' + self.db + nl
         return s
 
@@ -23,7 +23,7 @@ class Settings:
         if osname == 'nt':
             _data_folder = os.path.join(os.getenv('APPDATA'), appname)
         else:
-            _data_folder = os.path.join(os.getenv('HOME'), '.' + appname )
+            _data_folder = os.path.join(os.getenv('HOME'), '.' + appname)
 
         if not os.path.exists(_data_folder):
             os.makedirs(_data_folder)

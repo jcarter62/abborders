@@ -1,8 +1,9 @@
-from flask import Flask, current_app, jsonify, request, has_request_context
-from db import DB
 import logging
-from logdir import LogFile
 
+from flask import Flask, jsonify, request
+
+from db import DB
+from logdir import LogFile
 
 app = Flask(__name__)
 
@@ -14,6 +15,7 @@ log_file_handler = logging.FileHandler(filename=logfile.full_path)
 logger.addHandler(log_file_handler)
 
 app.logger = logger
+
 
 @app.route('/')
 def hello_world():
@@ -110,19 +112,6 @@ def log(req):
 
     return
 
-# @app.after_request
-# def app_after_request():
-#     print('After Response')
-#
-#     context = {}
-#     if has_request_context():
-#         context.url = request.url
-#         context.remote_addr = request.remote_addr
-#     else:
-#         context.url = None
-#         context.remote_addr = None
-#     logger.info("%(remote_addr)s: %(url)s" % context)
-#
 
 if __name__ == '__main__':
     app.run()
