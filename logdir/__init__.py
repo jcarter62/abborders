@@ -1,3 +1,5 @@
+import arrow
+import os
 
 
 class LogDir:
@@ -16,3 +18,21 @@ class LogDir:
         self.log_folder = _log_folder
         return
 
+
+class LogFile:
+
+    def __init__(self, appname=''):
+        if appname == '':
+            self.appname = 'app'
+        else:
+            self.appname = appname
+
+        self.filename = self.appname + '-' + self.get_time_stamp_string() + '.txt'
+        log_dir = LogDir().log_folder
+        self.full_path = os.path.join(log_dir, self.filename)
+        return
+
+    def get_time_stamp_string(self):
+        now = arrow.now()
+        fn = now.format('YYYYMMDD')
+        return fn
